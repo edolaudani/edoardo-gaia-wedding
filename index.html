@@ -1,1410 +1,1847 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Edoardo & Gaia | Our Honeymoon</title>
+
+  <meta
+    name="description"
+    content="Our honeymoon in Rwanda. A collection of experiences we hope to share through your wedding gifts."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --ivory: #f7f4ed;
+      --paper: #fbfaf6;
+      --forest: #30483a;
+      --forest-dark: #23372d;
+      --sage: #69776b;
+      --sand: #c0a77a;
+      --text: #30332f;
+      --muted: #72766f;
+      --line: rgba(48, 72, 58, 0.13);
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 28px 38px;
+
+      color: white;
+    }
+
+    .nav-monogram {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.55);
+      padding-bottom: 3px;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 94vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      overflow: hidden;
 
-    <title>Edoardo & Gaia | Our Wedding</title>
+      background:
+        linear-gradient(
+          rgba(28, 49, 38, 0.38),
+          rgba(28, 49, 38, 0.53)
+        ),
+        url("assets/rwanda/hero.jpg")
+        center center / cover no-repeat;
+    }
 
-    <meta
-        name="description"
-        content="A little page for Edoardo & Gaia's wedding gifts."
-    >
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.02) 45%,
+          rgba(0,0,0,0.28) 100%
+        );
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
-        rel="stylesheet"
-    >
+      pointer-events: none;
+    }
 
-    <style>
+    .hero-content {
+      position: relative;
+      z-index: 2;
 
-        /* =========================================================
-           RESET
-        ========================================================= */
+      width: 100%;
+      max-width: 900px;
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      padding: 100px 24px 70px;
 
-        html {
-            scroll-behavior: smooth;
-        }
+      text-align: center;
+      color: white;
 
-        body {
-            font-family: "DM Sans", sans-serif;
-            background: #f8f5ef;
-            color: #253229;
-            -webkit-font-smoothing: antialiased;
-        }
+      animation: fadeUp 1s ease both;
+    }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      opacity: 0.88;
+      margin-bottom: 28px;
+    }
 
-        button,
-        a {
-            font-family: inherit;
-        }
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
 
+      font-size: clamp(82px, 14vw, 155px);
+      line-height: 0.78;
+      letter-spacing: -0.045em;
+    }
 
-        /* =========================================================
-           VARIABLES
-        ========================================================= */
+    .hero-subtitle {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(26px, 4vw, 40px);
 
-        :root {
-            --cream: #f8f5ef;
-            --cream-dark: #eee9df;
+      margin-top: 38px;
+    }
 
-            --green: #30483a;
-            --green-light: #607466;
+    .hero-meta {
+      margin-top: 15px;
 
-            --gold: #b59a69;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
 
-            --text: #253229;
-            --muted: #737b73;
+      opacity: 0.82;
+    }
 
-            --white: #ffffff;
+    .hero-divider {
+      width: 48px;
+      height: 1px;
 
-            --border: rgba(48, 72, 58, 0.14);
-        }
+      background: rgba(255,255,255,0.75);
 
+      margin: 32px auto 0;
+    }
 
-        /* =========================================================
-           PAGE
-        ========================================================= */
+    .hero-scroll {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
 
-        .page {
-            width: 100%;
-            overflow: hidden;
-        }
+      z-index: 3;
 
+      color: rgba(255,255,255,0.7);
 
-        /* =========================================================
-           HERO
-        ========================================================= */
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
 
-        .hero {
-            min-height: 92vh;
-            position: relative;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    /* =========================================================
+       INTRODUCTION
+    ========================================================= */
 
-            text-align: center;
+    .intro {
+      max-width: 780px;
+      margin: auto;
 
-            padding: 70px 24px;
+      padding: 105px 25px 85px;
 
-            background:
-                radial-gradient(
-                    circle at 50% 35%,
-                    rgba(181, 154, 105, 0.10),
-                    transparent 35%
-                ),
-                var(--cream);
-        }
+      text-align: center;
+    }
 
+    .section-label {
+      color: var(--sage);
 
-        /* subtle decorative circles */
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
 
-        .hero::before {
-            content: "";
-            position: absolute;
+      margin-bottom: 20px;
+    }
 
-            width: 520px;
-            height: 520px;
+    .intro h2 {
+      color: var(--forest);
 
-            border: 1px solid rgba(181, 154, 105, 0.18);
-            border-radius: 50%;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
 
-            top: 50%;
-            left: 50%;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 0.98;
 
-            transform: translate(-50%, -50%);
+      margin-bottom: 28px;
+    }
 
-            pointer-events: none;
-        }
+    .intro p {
+      max-width: 630px;
+      margin: auto;
 
-        .hero::after {
-            content: "";
-            position: absolute;
+      color: var(--muted);
 
-            width: 620px;
-            height: 620px;
+      font-size: 14px;
+      line-height: 1.85;
+    }
 
-            border: 1px solid rgba(48, 72, 58, 0.07);
-            border-radius: 50%;
+    .intro-signature {
+      margin-top: 30px;
 
-            top: 50%;
-            left: 50%;
+      color: var(--sand);
 
-            transform: translate(-50%, -50%);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      font-style: italic;
+    }
 
-            pointer-events: none;
-        }
 
+    /* =========================================================
+       JOURNEY INTRO
+    ========================================================= */
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
+    .journey-intro {
+      max-width: 1120px;
+      margin: auto;
 
-            max-width: 720px;
-        }
+      padding: 0 25px 45px;
 
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
 
-        .eyebrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+      gap: 40px;
+    }
 
-            gap: 13px;
+    .journey-intro h2 {
+      color: var(--forest);
 
-            color: var(--green-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(38px, 5vw, 52px);
+      font-weight: 500;
 
-            font-size: 11px;
-            font-weight: 600;
+      line-height: 1;
+    }
 
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
+    .journey-intro p {
+      max-width: 390px;
 
-            margin-bottom: 28px;
-        }
+      color: var(--muted);
 
-        .eyebrow-line {
-            width: 32px;
-            height: 1px;
+      font-size: 12px;
+      line-height: 1.75;
+    }
 
-            background: var(--gold);
-        }
 
+    /* =========================================================
+       EXPERIENCE GRID
+    ========================================================= */
 
-        .names {
-            font-family: "Cormorant Garamond", serif;
+    .experiences {
+      max-width: 1120px;
+      margin: auto;
 
-            font-size: clamp(72px, 13vw, 128px);
+      padding: 0 25px 115px;
+    }
 
-            line-height: 0.82;
+    .experience-grid {
+      display: grid;
 
-            font-weight: 500;
+      grid-template-columns: repeat(2, 1fr);
 
-            letter-spacing: -0.055em;
+      gap: 25px;
+    }
 
-            color: var(--green);
-        }
+    .experience-card {
+      background: var(--paper);
 
+      border: 1px solid var(--line);
 
-        .ampersand {
-            display: block;
+      overflow: hidden;
 
-            font-size: 0.42em;
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
+    }
 
-            line-height: 1;
+    .experience-card:hover {
+      transform: translateY(-5px);
 
-            color: var(--gold);
+      box-shadow:
+        0 20px 45px rgba(38,58,47,0.09);
+    }
 
-            font-weight: 400;
+    .experience-image {
+      height: 285px;
 
-            margin: 13px 0;
-        }
+      background-position: center;
+      background-size: cover;
 
+      position: relative;
+    }
 
-        .hero-date {
-            margin-top: 40px;
+    .experience-number {
+      position: absolute;
+      top: 18px;
+      left: 18px;
 
-            font-family: "Cormorant Garamond", serif;
+      width: 36px;
+      height: 36px;
 
-            font-size: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-            letter-spacing: 0.04em;
+      background: rgba(255,255,255,0.92);
 
-            color: var(--green);
-        }
+      color: var(--forest);
 
+      font-family: "Cormorant Garamond", serif;
+      font-size: 17px;
+    }
 
-        .hero-location {
-            margin-top: 7px;
+    .experience-body {
+      padding: 31px 31px 29px;
+    }
 
-            font-size: 11px;
+    .experience-type {
+      color: var(--sage);
 
-            letter-spacing: 0.19em;
+      font-size: 9px;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
 
-            text-transform: uppercase;
+      margin-bottom: 9px;
+    }
 
-            color: var(--muted);
-        }
+    .experience-card h3 {
+      color: var(--forest);
 
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      font-weight: 500;
 
-        .scroll-indicator {
-            position: absolute;
+      line-height: 0.98;
 
-            bottom: 28px;
-            left: 50%;
+      margin-bottom: 14px;
+    }
 
-            transform: translateX(-50%);
+    .experience-card p {
+      color: var(--muted);
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+      font-size: 13px;
+      line-height: 1.75;
 
-            gap: 8px;
+      margin-bottom: 26px;
+    }
 
-            color: var(--muted);
+    .experience-bottom {
+      display: flex;
 
-            font-size: 9px;
+      justify-content: space-between;
+      align-items: center;
 
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-        }
+      gap: 15px;
+    }
 
-        .scroll-line {
-            width: 1px;
-            height: 35px;
+    .suggested {
+      color: #898d86;
 
-            background: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.02em;
+    }
 
-            opacity: 0.7;
-        }
+    .contribute {
+      border: 1px solid var(--forest);
 
+      background: transparent;
 
-        /* =========================================================
-           INTRO
-        ========================================================= */
+      color: var(--forest);
 
-        .intro {
-            padding: 110px 24px 100px;
+      padding: 11px 18px;
 
-            text-align: center;
+      font-size: 11px;
 
-            background: var(--white);
-        }
+      cursor: pointer;
 
-        .section-inner {
-            width: 100%;
-            max-width: 760px;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
 
-            margin: 0 auto;
-        }
+    .contribute:hover {
+      background: var(--forest);
+      color: white;
+    }
 
 
-        .small-label {
-            font-size: 10px;
+    /* =========================================================
+       SPECIAL LARGE CARD
+    ========================================================= */
 
-            font-weight: 600;
+    .experience-card.featured {
+      grid-column: span 2;
 
-            letter-spacing: 0.2em;
+      display: grid;
 
-            text-transform: uppercase;
+      grid-template-columns: 1fr 1fr;
+    }
 
-            color: var(--gold);
+    .experience-card.featured .experience-image {
+      height: 100%;
+      min-height: 360px;
+    }
 
-            margin-bottom: 20px;
-        }
+    .experience-card.featured .experience-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
+      padding: 50px;
+    }
 
-        .intro h2 {
-            font-family: "Cormorant Garamond", serif;
 
-            font-size: clamp(40px, 7vw, 60px);
+    /* =========================================================
+       PAYMENT MODAL
+    ========================================================= */
 
-            line-height: 1.05;
+    .modal {
+      position: fixed;
+      inset: 0;
 
-            font-weight: 500;
+      z-index: 100;
 
-            letter-spacing: -0.035em;
+      display: none;
+      align-items: center;
+      justify-content: center;
 
-            color: var(--green);
+      padding: 25px;
 
-            margin-bottom: 25px;
-        }
+      background: rgba(24,38,30,0.62);
 
+      backdrop-filter: blur(5px);
+    }
 
-        .intro p {
-            max-width: 570px;
+    .modal.open {
+      display: flex;
 
-            margin: 0 auto;
+      animation: fadeIn 0.2s ease both;
+    }
 
-            color: var(--muted);
+    .payment-box {
+      width: 100%;
+      max-width: 520px;
 
-            font-size: 15px;
+      background: var(--paper);
 
-            line-height: 1.85;
-        }
+      padding: 46px 40px 38px;
 
+      text-align: center;
 
-        /* =========================================================
-           GIFTS SECTION
-        ========================================================= */
+      position: relative;
 
-        .gifts {
-            padding: 100px 22px 120px;
+      animation: fadeUp 0.3s ease both;
+    }
 
-            background: var(--cream);
-        }
+    .close-modal {
+      position: absolute;
 
+      top: 16px;
+      right: 18px;
 
-        .section-heading {
-            text-align: center;
+      border: 0;
+      background: none;
 
-            margin-bottom: 55px;
-        }
+      color: var(--sage);
 
+      font-size: 21px;
 
-        .section-heading h2 {
-            font-family: "Cormorant Garamond", serif;
+      cursor: pointer;
+    }
 
-            font-size: clamp(42px, 7vw, 58px);
+    .payment-label {
+      color: var(--sage);
 
-            line-height: 1;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
 
-            font-weight: 500;
+      margin-bottom: 11px;
+    }
 
-            letter-spacing: -0.035em;
+    .payment-box h2 {
+      color: var(--forest);
 
-            color: var(--green);
+      font-family: "Cormorant Garamond", serif;
 
-            margin-bottom: 15px;
-        }
+      font-size: 40px;
+      font-weight: 500;
 
+      line-height: 1;
 
-        .section-heading p {
-            color: var(--muted);
+      margin-bottom: 13px;
+    }
 
-            font-size: 14px;
+    .payment-box p {
+      color: var(--muted);
 
-            line-height: 1.7;
+      font-size: 12px;
 
-            max-width: 480px;
+      margin-bottom: 28px;
+    }
 
-            margin: 0 auto;
-        }
+    .amount-options {
+      display: flex;
 
+      justify-content: center;
+      flex-wrap: wrap;
 
-        .gift-grid {
-            max-width: 1040px;
+      gap: 8px;
 
-            margin: 0 auto;
+      margin-bottom: 18px;
+    }
 
-            display: grid;
+    .amount {
+      min-width: 73px;
 
-            grid-template-columns: repeat(3, 1fr);
+      padding: 11px 14px;
 
-            gap: 20px;
-        }
+      border: 1px solid var(--line);
 
+      background: var(--ivory);
 
-        .gift-card {
-            background: var(--white);
+      color: var(--forest);
 
-            border: 1px solid var(--border);
+      cursor: pointer;
 
-            padding: 38px 30px 34px;
+      font-size: 12px;
 
-            text-align: center;
+      transition: all 0.2s ease;
+    }
 
-            position: relative;
+    .amount:hover {
+      border-color: var(--forest);
+    }
 
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
+    .amount.selected {
+      background: var(--forest);
+      border-color: var(--forest);
 
+      color: white;
+    }
 
-        .gift-card:hover {
-            transform: translateY(-5px);
+    .custom-wrapper {
+      display: none;
 
-            box-shadow:
-                0 18px 45px rgba(48, 72, 58, 0.08);
-        }
+      max-width: 280px;
 
+      margin: 7px auto 20px;
+    }
 
-        .gift-number {
-            font-family: "Cormorant Garamond", serif;
+    .custom-wrapper.visible {
+      display: block;
+    }
 
-            font-size: 16px;
+    .custom-wrapper label {
+      display: block;
 
-            color: var(--gold);
+      text-align: left;
 
-            margin-bottom: 25px;
-        }
+      color: var(--muted);
 
+      font-size: 10px;
 
-        .gift-icon {
-            width: 62px;
-            height: 62px;
+      margin-bottom: 5px;
+    }
 
-            margin: 0 auto 25px;
+    .custom-input {
+      width: 100%;
 
-            border-radius: 50%;
+      padding: 12px;
 
-            background: #f3f0e9;
+      border: 1px solid var(--line);
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+      outline: none;
 
-            color: var(--green);
+      background: white;
 
-            font-family: "Cormorant Garamond", serif;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+    }
 
-            font-size: 27px;
-        }
+    .paypal-button {
+      width: 100%;
+      max-width: 280px;
 
+      padding: 14px 20px;
 
-        .gift-card h3 {
-            font-family: "Cormorant Garamond", serif;
+      border: 0;
 
-            font-size: 31px;
+      background: #ffc439;
 
-            font-weight: 600;
+      color: #111;
 
-            color: var(--green);
+      cursor: pointer;
 
-            margin-bottom: 13px;
-        }
+      font-size: 12px;
+      font-weight: 500;
 
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
 
-        .gift-card p {
-            color: var(--muted);
+    .paypal-button:hover {
+      transform: translateY(-2px);
 
-            font-size: 13px;
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.1);
+    }
 
-            line-height: 1.75;
+    .paypal {
+      font-size: 16px;
 
-            margin-bottom: 27px;
-        }
+      font-style: italic;
+      font-weight: 700;
 
+      margin-right: 7px;
+    }
 
-        .gift-button {
-            display: inline-flex;
+    .payment-note {
+      margin-top: 14px;
 
-            align-items: center;
-            justify-content: center;
+      color: #9a9d97;
 
-            min-height: 44px;
+      font-size: 9px;
+    }
 
-            padding: 0 22px;
 
-            border: 1px solid rgba(48, 72, 58, 0.25);
+    /* =========================================================
+       CLOSING
+    ========================================================= */
 
-            color: var(--green);
+    .closing {
+      background: var(--forest);
 
-            background: transparent;
+      color: white;
 
-            text-decoration: none;
+      text-align: center;
 
-            font-size: 11px;
+      padding: 105px 25px;
+    }
 
-            font-weight: 600;
+    .closing h2 {
+      font-family: "Cormorant Garamond", serif;
 
-            letter-spacing: 0.12em;
+      font-size: clamp(44px, 7vw, 68px);
 
-            text-transform: uppercase;
+      font-weight: 400;
 
-            cursor: pointer;
+      line-height: 0.95;
 
-            transition:
-                background 0.2s ease,
-                color 0.2s ease;
-        }
+      margin-bottom: 24px;
+    }
 
+    .closing p {
+      max-width: 510px;
 
-        .gift-button:hover {
-            background: var(--green);
+      margin: auto;
 
-            color: white;
-        }
+      color: rgba(255,255,255,0.69);
 
+      font-size: 13px;
+      line-height: 1.75;
+    }
 
-        /* =========================================================
-           PAYMENT SECTION
-        ========================================================= */
+    .closing-signature {
+      color: var(--sand);
 
-        .payment {
-            display: none;
+      font-family: "Cormorant Garamond", serif;
 
-            padding: 0 22px 110px;
+      font-size: 27px;
 
-            background: var(--cream);
-        }
+      margin-top: 32px;
+    }
 
 
-        .payment-inner {
-            max-width: 620px;
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
-            margin: 0 auto;
+    footer {
+      background: var(--forest);
 
-            background: var(--white);
+      color: rgba(255,255,255,0.4);
 
-            border: 1px solid var(--border);
+      text-align: center;
 
-            padding: 42px 38px;
+      padding: 0 25px 32px;
 
-            text-align: center;
-        }
+      font-size: 9px;
 
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-        .payment h3 {
-            font-family: "Cormorant Garamond", serif;
 
-            font-size: 35px;
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
 
-            font-weight: 600;
+    @keyframes fadeUp {
 
-            color: var(--green);
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
 
-            margin-bottom: 12px;
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
+    }
 
-        .payment-description {
-            color: var(--muted);
+    @keyframes fadeIn {
 
-            font-size: 13px;
+      from {
+        opacity: 0;
+      }
 
-            line-height: 1.7;
+      to {
+        opacity: 1;
+      }
 
-            margin-bottom: 28px;
-        }
+    }
 
 
-        .bank-details {
-            background: #f7f4ed;
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
-            padding: 25px;
+    @media (max-width: 760px) {
 
-            text-align: left;
+      .nav {
+        padding: 22px 20px;
+      }
 
-            margin-bottom: 20px;
-        }
+      .nav-link {
+        font-size: 9px;
+      }
 
+      .hero {
+        min-height: 88vh;
+      }
 
-        .detail-row {
-            display: flex;
+      .hero-content {
+        padding-top: 100px;
+      }
 
-            justify-content: space-between;
-            align-items: center;
+      .intro {
+        padding-top: 80px;
+        padding-bottom: 65px;
+      }
 
-            gap: 20px;
+      .journey-intro {
+        display: block;
 
-            padding: 12px 0;
+        padding-bottom: 32px;
+      }
 
-            border-bottom: 1px solid rgba(48, 72, 58, 0.09);
-        }
+      .journey-intro p {
+        margin-top: 18px;
+      }
 
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
 
-        .detail-row:last-child {
-            border-bottom: 0;
-        }
+      .experience-card.featured {
+        grid-column: span 1;
 
+        display: block;
+      }
 
-        .detail-label {
-            font-size: 10px;
+      .experience-card.featured .experience-image {
+        min-height: 250px;
+        height: 250px;
+      }
 
-            color: var(--muted);
+      .experience-card.featured .experience-body {
+        padding: 31px;
+      }
 
-            letter-spacing: 0.12em;
+      .experience-image {
+        height: 230px;
+      }
 
-            text-transform: uppercase;
-        }
+      .experience-bottom {
+        align-items: flex-start;
+      }
 
+      .payment-box {
+        padding: 42px 23px 32px;
+      }
 
-        .detail-value {
-            font-size: 13px;
+      .payment-box h2 {
+        font-size: 35px;
+      }
 
-            color: var(--green);
+    }
 
-            font-weight: 500;
-
-            text-align: right;
-
-            word-break: break-all;
-        }
-
-
-        .copy-button {
-            width: 100%;
-
-            height: 46px;
-
-            border: 0;
-
-            background: var(--green);
-
-            color: white;
-
-            cursor: pointer;
-
-            font-size: 11px;
-
-            font-weight: 600;
-
-            letter-spacing: 0.12em;
-
-            text-transform: uppercase;
-
-            transition: opacity 0.2s ease;
-        }
-
-
-        .copy-button:hover {
-            opacity: 0.9;
-        }
-
-
-        .close-payment {
-            margin-top: 18px;
-
-            border: 0;
-
-            background: none;
-
-            color: var(--muted);
-
-            font-size: 11px;
-
-            text-decoration: underline;
-
-            cursor: pointer;
-        }
-
-
-        /* =========================================================
-           CLOSING MESSAGE
-        ========================================================= */
-
-        .closing {
-            padding: 115px 24px 120px;
-
-            background: var(--green);
-
-            color: white;
-
-            text-align: center;
-
-            position: relative;
-        }
-
-
-        .closing::before {
-            content: "♡";
-
-            position: absolute;
-
-            top: 40px;
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            color: rgba(255,255,255,0.22);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 26px;
-        }
-
-
-        .closing h2 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(44px, 8vw, 64px);
-
-            line-height: 1;
-
-            font-weight: 500;
-
-            margin-bottom: 25px;
-        }
-
-
-        .closing p {
-            max-width: 520px;
-
-            margin: 0 auto;
-
-            color: rgba(255,255,255,0.72);
-
-            font-size: 14px;
-
-            line-height: 1.85;
-        }
-
-
-        .closing-names {
-            margin-top: 38px;
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 25px;
-
-            color: white;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            padding: 25px 20px;
-
-            text-align: center;
-
-            background: #263a2f;
-
-            color: rgba(255,255,255,0.4);
-
-            font-size: 9px;
-
-            letter-spacing: 0.15em;
-
-            text-transform: uppercase;
-        }
-
-
-        /* =========================================================
-           ANIMATION
-        ========================================================= */
-
-        .fade-in {
-            animation: fadeIn 1s ease both;
-        }
-
-        .fade-delay-1 {
-            animation-delay: 0.15s;
-        }
-
-        .fade-delay-2 {
-            animation-delay: 0.3s;
-        }
-
-        .fade-delay-3 {
-            animation-delay: 0.45s;
-        }
-
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* =========================================================
-           MOBILE
-        ========================================================= */
-
-        @media (max-width: 760px) {
-
-            .hero {
-                min-height: 88vh;
-
-                padding-top: 60px;
-                padding-bottom: 80px;
-            }
-
-
-            .hero::before {
-                width: 390px;
-                height: 390px;
-            }
-
-            .hero::after {
-                width: 460px;
-                height: 460px;
-            }
-
-
-            .names {
-                font-size: clamp(67px, 20vw, 100px);
-            }
-
-
-            .hero-date {
-                margin-top: 32px;
-
-                font-size: 23px;
-            }
-
-
-            .intro {
-                padding: 85px 24px;
-            }
-
-
-            .gifts {
-                padding-top: 80px;
-                padding-bottom: 85px;
-            }
-
-
-            .gift-grid {
-                grid-template-columns: 1fr;
-
-                max-width: 430px;
-            }
-
-
-            .gift-card {
-                padding: 35px 28px;
-            }
-
-
-            .payment {
-                padding-bottom: 85px;
-            }
-
-
-            .payment-inner {
-                padding: 35px 22px;
-            }
-
-
-            .detail-row {
-                align-items: flex-start;
-
-                flex-direction: column;
-
-                gap: 5px;
-            }
-
-
-            .detail-value {
-                text-align: left;
-            }
-
-
-            .closing {
-                padding: 95px 24px;
-            }
-
-        }
-
-
-        @media (max-width: 380px) {
-
-            .names {
-                font-size: 64px;
-            }
-
-            .hero::before {
-                width: 320px;
-                height: 320px;
-            }
-
-            .hero::after {
-                width: 380px;
-                height: 380px;
-            }
-
-        }
-
-    </style>
+  </style>
 </head>
 
 
 <body>
 
-<div class="page">
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <nav class="nav">
+
+    <div class="nav-monogram">
+      E & G
+    </div>
+
+    <a href="/" class="nav-link">
+      Wedding
+    </a>
+
+  </nav>
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
-    <section class="hero">
+  <header class="hero">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <div class="eyebrow fade-in">
-                <span class="eyebrow-line"></span>
-                Our wedding
-                <span class="eyebrow-line"></span>
-            </div>
+      <div class="hero-eyebrow">
+        Our honeymoon · September 2027
+      </div>
+
+      <h1>
+        Rwanda
+      </h1>
+
+      <div class="hero-subtitle">
+        An adventure for two
+      </div>
+
+      <div class="hero-meta">
+        Gorilla trekking · Safari · Mountains · Lake Kivu
+      </div>
+
+      <div class="hero-divider"></div>
+
+    </div>
+
+    <div class="hero-scroll">
+      Discover the journey
+    </div>
+
+  </header>
 
 
-            <div class="names fade-in fade-delay-1">
+  <!-- =====================================================
+       INTRODUCTION
+  ====================================================== -->
 
-                Edoardo
+  <section class="intro">
 
-                <span class="ampersand">&amp;</span>
+    <div class="section-label">
+      A different kind of wedding gift
+    </div>
 
-                Gaia
+    <h2>
+      Instead of a present,<br>
+      give us a memory.
+    </h2>
 
-            </div>
+    <p>
+      For our honeymoon, we are dreaming of Rwanda.
+      We want to trek through the forests in search of mountain
+      gorillas, discover the country's wildlife and landscapes,
+      and spend a little time simply enjoying being there together.
+    </p>
+
+    <p style="margin-top: 15px;">
+      So we have turned our honeymoon into a collection of
+      experiences. If you would like to give us a gift,
+      you can choose one of the moments below and become
+      a small part of our adventure.
+    </p>
+
+    <div class="intro-signature">
+      Edoardo & Gaia
+    </div>
+
+  </section>
 
 
-            <div class="hero-date fade-in fade-delay-2">
-                September 2027
-            </div>
+  <!-- =====================================================
+       EXPERIENCE INTRO
+  ====================================================== -->
 
-            <div class="hero-location fade-in fade-delay-3">
-                Roma · Italia
-            </div>
+  <section class="journey-intro">
+
+    <div>
+      <div class="section-label">
+        The journey
+      </div>
+
+      <h2>
+        Ten little pieces<br>
+        of our honeymoon.
+      </h2>
+    </div>
+
+    <p>
+      The amounts shown are only suggestions.
+      You are welcome to contribute whatever feels right,
+      towards whichever part of the journey you like.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       EXPERIENCES
+  ====================================================== -->
+
+  <section class="experiences">
+
+    <div class="experience-grid">
+
+
+      <!-- =================================================
+           01
+      ================================================== -->
+
+      <article class="experience-card featured">
+
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/gorilla.jpg');"
+        >
+
+          <div class="experience-number">
+            01
+          </div>
 
         </div>
 
+        <div class="experience-body">
 
-        <div class="scroll-indicator">
-            <span>Discover</span>
-            <span class="scroll-line"></span>
-        </div>
+          <div class="experience-type">
+            The adventure
+          </div>
 
-    </section>
+          <h3>
+            Gorilla Trekking
+          </h3>
 
+          <p>
+            The experience that started it all.
+            A day in the Virunga mountains, walking through
+            the forest in search of one of the mountain gorillas
+            that make Rwanda so extraordinary.
+          </p>
 
+          <div class="experience-bottom">
 
-    <!-- =========================================================
-         INTRO
-    ========================================================== -->
-
-    <section class="intro">
-
-        <div class="section-inner">
-
-            <div class="small-label">
-                A little note
+            <div class="suggested">
+              Suggested contribution · €150
             </div>
-
-
-            <h2>
-                Having you with us<br>
-                is already a gift.
-            </h2>
-
-
-            <p>
-                We can't wait to celebrate this special day surrounded by
-                the people we love. Your presence, your smiles and the
-                memories we'll make together mean more to us than anything
-                else.
-                <br><br>
-                If you would nevertheless like to give us something,
-                we've put together a few ideas below for the next chapter
-                of our life together.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         GIFTS
-    ========================================================== -->
-
-    <section class="gifts" id="gifts">
-
-        <div class="section-heading">
-
-            <div class="small-label">
-                If you wish
-            </div>
-
-            <h2>
-                A gift for our future
-            </h2>
-
-            <p>
-                There is no obligation at all. But if you'd like to
-                contribute, these are the things we'd love to put towards
-                our life together.
-            </p>
-
-        </div>
-
-
-
-        <div class="gift-grid">
-
-
-            <!-- GIFT 1 -->
-
-            <article class="gift-card">
-
-                <div class="gift-number">
-                    I
-                </div>
-
-                <div class="gift-icon">
-                    ✈
-                </div>
-
-                <h3>
-                    Our honeymoon
-                </h3>
-
-                <p>
-                    Help us turn our honeymoon into an unforgettable
-                    adventure, with a few more places to discover,
-                    dinners to remember and stories to bring home.
-                </p>
-
-                <button
-                    class="gift-button"
-                    onclick="showPayment('honeymoon')"
-                >
-                    Contribute
-                </button>
-
-            </article>
-
-
-
-            <!-- GIFT 2 -->
-
-            <article class="gift-card">
-
-                <div class="gift-number">
-                    II
-                </div>
-
-                <div class="gift-icon">
-                    ⌂
-                </div>
-
-                <h3>
-                    Our home
-                </h3>
-
-                <p>
-                    For the little things that will make our home ours:
-                    something beautiful for the table, something for the
-                    kitchen, or simply something we'll enjoy together
-                    every day.
-                </p>
-
-                <button
-                    class="gift-button"
-                    onclick="showPayment('home')"
-                >
-                    Contribute
-                </button>
-
-            </article>
-
-
-
-            <!-- GIFT 3 -->
-
-            <article class="gift-card">
-
-                <div class="gift-number">
-                    III
-                </div>
-
-                <div class="gift-icon">
-                    ♡
-                </div>
-
-                <h3>
-                    Our future
-                </h3>
-
-                <p>
-                    Or simply help us put something aside for the many
-                    adventures, trips and little dreams still waiting
-                    for us.
-                </p>
-
-                <button
-                    class="gift-button"
-                    onclick="showPayment('future')"
-                >
-                    Contribute
-                </button>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         PAYMENT
-    ========================================================== -->
-
-    <section class="payment" id="payment">
-
-        <div class="payment-inner">
-
-            <div class="small-label">
-                Thank you
-            </div>
-
-
-            <h3 id="payment-title">
-                A little something for our honeymoon
-            </h3>
-
-
-            <p class="payment-description">
-                If you'd like to contribute, you can use the details
-                below. Thank you so much for being part of this chapter
-                of our lives.
-            </p>
-
-
-            <div class="bank-details">
-
-                <div class="detail-row">
-
-                    <span class="detail-label">
-                        Account holder
-                    </span>
-
-                    <span
-                        class="detail-value"
-                        id="account-holder"
-                    >
-                        EDOARDO LAUDANI
-                    </span>
-
-                </div>
-
-
-                <div class="detail-row">
-
-                    <span class="detail-label">
-                        IBAN
-                    </span>
-
-                    <span
-                        class="detail-value"
-                        id="iban"
-                    >
-                        XX00 0000 0000 0000 0000 0000
-                    </span>
-
-                </div>
-
-
-                <div class="detail-row">
-
-                    <span class="detail-label">
-                        BIC / SWIFT
-                    </span>
-
-                    <span
-                        class="detail-value"
-                        id="bic"
-                    >
-                        XXXXXXXX
-                    </span>
-
-                </div>
-
-            </div>
-
 
             <button
-                class="copy-button"
-                onclick="copyIBAN()"
+              class="contribute"
+              onclick="openPayment('Gorilla Trekking')"
             >
-                Copy IBAN
+              Contribute
             </button>
 
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           02
+      ================================================== -->
+
+      <article class="experience-card">
+
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/forest.jpg');"
+        >
+
+          <div class="experience-number">
+            02
+          </div>
+
+        </div>
+
+        <div class="experience-body">
+
+          <div class="experience-type">
+            The forest
+          </div>
+
+          <h3>
+            A Night in the Forest
+          </h3>
+
+          <p>
+            A night surrounded by the landscapes of the
+            Virunga region, close to the forests where the
+            gorillas live.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €200
+            </div>
 
             <button
-                class="close-payment"
-                onclick="hidePayment()"
+              class="contribute"
+              onclick="openPayment('A Night in the Forest')"
             >
-                Close
+              Contribute
             </button>
 
+          </div>
+
         </div>
 
-    </section>
+      </article>
 
 
+      <!-- =================================================
+           03
+      ================================================== -->
 
-    <!-- =========================================================
-         CLOSING
-    ========================================================== -->
+      <article class="experience-card">
 
-    <section class="closing">
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/jeep.jpg');"
+        >
 
-        <h2>
-            We can't wait<br>
-            to celebrate with you.
-        </h2>
+          <div class="experience-number">
+            03
+          </div>
 
-
-        <p>
-            Whatever you choose to do, thank you for being part of our
-            story. We are looking forward to sharing this day, and all
-            the moments around it, with you.
-        </p>
-
-
-        <div class="closing-names">
-            Edoardo &amp; Gaia
         </div>
 
-    </section>
+        <div class="experience-body">
+
+          <div class="experience-type">
+            The road
+          </div>
+
+          <h3>
+            Our Safari Jeep
+          </h3>
+
+          <p>
+            Four wheels, winding roads and a lot of looking
+            out of the window. Our way of discovering Rwanda
+            one landscape at a time.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €100
+            </div>
+
+            <button
+              class="contribute"
+              onclick="openPayment('Our Safari Jeep')"
+            >
+              Contribute
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
 
 
+      <!-- =================================================
+           04
+      ================================================== -->
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
+      <article class="experience-card">
 
-    <footer>
-        Edoardo &amp; Gaia · September 2027 · Roma
-    </footer>
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/akagera.jpg');"
+        >
 
+          <div class="experience-number">
+            04
+          </div>
 
-</div>
+        </div>
 
+        <div class="experience-body">
 
+          <div class="experience-type">
+            The wildlife
+          </div>
 
-<script>
+          <h3>
+            A Day on Safari
+          </h3>
 
-    /* =========================================================
-       PAYMENT DETAILS
-    ========================================================== */
+          <p>
+            A day exploring Rwanda's wildlife and hoping to
+            spot elephants, giraffes, lions, hippos and all
+            the unexpected moments that make a safari special.
+          </p>
 
-    /*
-       Change these values to your real bank details.
-    */
+          <div class="experience-bottom">
 
-    const paymentDetails = {
+            <div class="suggested">
+              Suggested contribution · €150
+            </div>
 
-        holder: "EDOARDO LAUDANI",
+            <button
+              class="contribute"
+              onclick="openPayment('A Day on Safari')"
+            >
+              Contribute
+            </button>
 
-        iban: "XX00 0000 0000 0000 0000 0000",
+          </div>
 
-        bic: "XXXXXXXX"
+        </div>
 
-    };
-
-
-    /* =========================================================
-       SHOW PAYMENT
-    ========================================================== */
-
-    function showPayment(type) {
-
-        const payment = document.getElementById("payment");
-
-        const title = document.getElementById("payment-title");
-
-        const titles = {
-
-            honeymoon:
-                "A little something for our honeymoon",
-
-            home:
-                "A little something for our home",
-
-            future:
-                "A little something for our future"
-
-        };
+      </article>
 
 
-        title.textContent = titles[type];
+      <!-- =================================================
+           05
+      ================================================== -->
 
-        payment.style.display = "block";
+      <article class="experience-card">
+
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/lake-kivu.jpg');"
+        >
+
+          <div class="experience-number">
+            05
+          </div>
+
+        </div>
+
+        <div class="experience-body">
+
+          <div class="experience-type">
+            The lake
+          </div>
+
+          <h3>
+            Lake Kivu
+          </h3>
+
+          <p>
+            A change of pace after the adventure.
+            Time by the lake, beautiful views and a few days
+            where the only plan is to enjoy being there.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €150
+            </div>
+
+            <button
+              class="contribute"
+              onclick="openPayment('Lake Kivu')"
+            >
+              Contribute
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
 
 
-        /*
-           Give the browser a moment to render the section
-           before scrolling to it.
-        */
+      <!-- =================================================
+           06
+      ================================================== -->
 
-        setTimeout(() => {
+      <article class="experience-card">
 
-            payment.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/sunrise.jpg');"
+        >
 
-        }, 50);
+          <div class="experience-number">
+            06
+          </div>
 
+        </div>
+
+        <div class="experience-body">
+
+          <div class="experience-type">
+            The mornings
+          </div>
+
+          <h3>
+            Sunrise in Rwanda
+          </h3>
+
+          <p>
+            One of those mornings worth waking up early for.
+            Mountains, mist and the first light over the
+            Rwandan countryside.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €75
+            </div>
+
+            <button
+              class="contribute"
+              onclick="openPayment('Sunrise in Rwanda')"
+            >
+              Contribute
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           07
+      ================================================== -->
+
+      <article class="experience-card">
+
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/dinner.jpg');"
+        >
+
+          <div class="experience-number">
+            07
+          </div>
+
+        </div>
+
+        <div class="experience-body">
+
+          <div class="experience-type">
+            The evenings
+          </div>
+
+          <h3>
+            Dinner for Two
+          </h3>
+
+          <p>
+            A beautiful table after a day of adventures.
+            Good food, something nice to drink and nowhere
+            else we need to be.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €100
+            </div>
+
+            <button
+              class="contribute"
+              onclick="openPayment('Dinner for Two')"
+            >
+              Contribute
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           08
+      ================================================== -->
+
+      <article class="experience-card">
+
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/lodge.jpg');"
+        >
+
+          <div class="experience-number">
+            08
+          </div>
+
+        </div>
+
+        <div class="experience-body">
+
+          <div class="experience-type">
+            The stay
+          </div>
+
+          <h3>
+            A Night to Remember
+          </h3>
+
+          <p>
+            One particularly special night somewhere beautiful.
+            Because a honeymoon should have at least one room
+            we never want to leave.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €250
+            </div>
+
+            <button
+              class="contribute"
+              onclick="openPayment('A Night to Remember')"
+            >
+              Contribute
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           09
+      ================================================== -->
+
+      <article class="experience-card">
+
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/coffee.jpg');"
+        >
+
+          <div class="experience-number">
+            09
+          </div>
+
+        </div>
+
+        <div class="experience-body">
+
+          <div class="experience-type">
+            The flavours
+          </div>
+
+          <h3>
+            Coffee & Tea Country
+          </h3>
+
+          <p>
+            Exploring Rwanda's green hills, discovering its
+            coffee and tea culture and seeing another side of
+            the country beyond the safari.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €100
+            </div>
+
+            <button
+              class="contribute"
+              onclick="openPayment('Coffee & Tea Country')"
+            >
+              Contribute
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           10
+      ================================================== -->
+
+      <article class="experience-card">
+
+        <div
+          class="experience-image"
+          style="background-image: url('assets/rwanda/journey.jpg');"
+        >
+
+          <div class="experience-number">
+            10
+          </div>
+
+        </div>
+
+        <div class="experience-body">
+
+          <div class="experience-type">
+            Getting there
+          </div>
+
+          <h3>
+            The Journey There
+          </h3>
+
+          <p>
+            From Europe to Rwanda and back again.
+            A contribution towards the long journey that will
+            take us to this extraordinary part of the world.
+          </p>
+
+          <div class="experience-bottom">
+
+            <div class="suggested">
+              Suggested contribution · €200
+            </div>
+
+            <button
+              class="contribute"
+              onclick="openPayment('The Journey There')"
+            >
+              Contribute
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PAYMENT MODAL
+  ====================================================== -->
+
+  <div
+    class="modal"
+    id="paymentModal"
+    onclick="backgroundClose(event)"
+  >
+
+    <div class="payment-box">
+
+      <button
+        class="close-modal"
+        onclick="closePayment()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="payment-label">
+        Your contribution
+      </div>
+
+      <h2 id="paymentTitle">
+        Gorilla Trekking
+      </h2>
+
+      <p>
+        Choose an amount and continue securely with PayPal.
+        The amount will be sent directly to us.
+      </p>
+
+
+      <div class="amount-options">
+
+        <button
+          class="amount"
+          onclick="selectAmount(50, this)"
+        >
+          €50
+        </button>
+
+        <button
+          class="amount"
+          onclick="selectAmount(100, this)"
+        >
+          €100
+        </button>
+
+        <button
+          class="amount"
+          onclick="selectAmount(150, this)"
+        >
+          €150
+        </button>
+
+        <button
+          class="amount"
+          onclick="selectAmount(250, this)"
+        >
+          €250
+        </button>
+
+        <button
+          class="amount"
+          onclick="showCustom(this)"
+        >
+          Other
+        </button>
+
+      </div>
+
+
+      <div
+        class="custom-wrapper"
+        id="customWrapper"
+      >
+
+        <label for="customAmount">
+          Your amount
+        </label>
+
+        <input
+          id="customAmount"
+          class="custom-input"
+          type="number"
+          min="1"
+          step="1"
+          placeholder="Enter amount in €"
+          oninput="customChanged()"
+        >
+
+      </div>
+
+
+      <button
+        class="paypal-button"
+        onclick="goToPayPal()"
+      >
+
+        <span class="paypal">
+          PayPal
+        </span>
+
+        Give with PayPal
+
+      </button>
+
+      <div class="payment-note">
+        You will be redirected to PayPal to complete your gift.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       CLOSING
+  ====================================================== -->
+
+  <section class="closing">
+
+    <h2>
+      Thank you for being<br>
+      part of our adventure.
+    </h2>
+
+    <p>
+      We cannot wait to come home with stories,
+      photographs and probably far too many pictures of gorillas.
+    </p>
+
+    <div class="closing-signature">
+      Edoardo & Gaia
+    </div>
+
+  </section>
+
+
+  <footer>
+    Edoardo & Gaia · Rwanda · 2027
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    const PAYPAL_USERNAME = "edoardogaia";
+
+    let selectedAmount = null;
+    let selectedGift = "";
+
+
+    /* -----------------------------------------------
+       OPEN PAYMENT
+    ------------------------------------------------ */
+
+    function openPayment(giftName) {
+
+      selectedGift = giftName;
+
+      document.getElementById("paymentTitle").textContent =
+        giftName;
+
+      selectedAmount = null;
+
+      document
+        .querySelectorAll(".amount")
+        .forEach(button => {
+          button.classList.remove("selected");
+        });
+
+      document
+        .getElementById("customWrapper")
+        .classList.remove("visible");
+
+      document
+        .getElementById("customAmount")
+        .value = "";
+
+      document
+        .getElementById("paymentModal")
+        .classList.add("open");
+
+      document.body.style.overflow = "hidden";
     }
 
 
+    /* -----------------------------------------------
+       PRESET AMOUNT
+    ------------------------------------------------ */
 
-    /* =========================================================
-       HIDE PAYMENT
-    ========================================================== */
+    function selectAmount(amount, button) {
 
-    function hidePayment() {
+      selectedAmount = amount;
 
-        const payment = document.getElementById("payment");
+      document
+        .querySelectorAll(".amount")
+        .forEach(item => {
+          item.classList.remove("selected");
+        });
 
-        payment.style.display = "none";
+      button.classList.add("selected");
 
+      document
+        .getElementById("customWrapper")
+        .classList.remove("visible");
+
+      document
+        .getElementById("customAmount")
+        .value = "";
     }
 
 
+    /* -----------------------------------------------
+       CUSTOM AMOUNT
+    ------------------------------------------------ */
 
-    /* =========================================================
-       COPY IBAN
-    ========================================================== */
+    function showCustom(button) {
 
-    async function copyIBAN() {
+      selectedAmount = null;
 
-        const button = document.querySelector(".copy-button");
+      document
+        .querySelectorAll(".amount")
+        .forEach(item => {
+          item.classList.remove("selected");
+        });
 
-        const iban = paymentDetails.iban.replace(/\s/g, "");
+      button.classList.add("selected");
 
-        try {
+      document
+        .getElementById("customWrapper")
+        .classList.add("visible");
 
-            await navigator.clipboard.writeText(iban);
-
-            button.textContent = "IBAN copied ✓";
-
-            setTimeout(() => {
-
-                button.textContent = "Copy IBAN";
-
-            }, 2200);
-
-        } catch (error) {
-
-            alert(
-                "Please copy the IBAN manually: " + iban
-            );
-
-        }
-
+      document
+        .getElementById("customAmount")
+        .focus();
     }
 
 
+    function customChanged() {
 
-    /* =========================================================
-       INSERT PAYMENT DETAILS
-    ========================================================== */
+      const value =
+        parseFloat(
+          document.getElementById("customAmount").value
+        );
 
-    document.getElementById("account-holder").textContent =
-        paymentDetails.holder;
-
-    document.getElementById("iban").textContent =
-        paymentDetails.iban;
-
-    document.getElementById("bic").textContent =
-        paymentDetails.bic;
+      if (!isNaN(value) && value > 0) {
+        selectedAmount = value;
+      } else {
+        selectedAmount = null;
+      }
+    }
 
 
-</script>
+    /* -----------------------------------------------
+       PAYPAL
+    ------------------------------------------------ */
 
+    function goToPayPal() {
+
+      if (!selectedAmount || selectedAmount <= 0) {
+
+        alert("Please choose or enter an amount first.");
+
+        return;
+      }
+
+      const amount =
+        Number(selectedAmount).toFixed(2);
+
+      const paypalUrl =
+        `https://paypal.me/${PAYPAL_USERNAME}/${amount}`;
+
+      window.location.href = paypalUrl;
+    }
+
+
+    /* -----------------------------------------------
+       CLOSE
+    ------------------------------------------------ */
+
+    function closePayment() {
+
+      document
+        .getElementById("paymentModal")
+        .classList.remove("open");
+
+      document.body.style.overflow = "";
+    }
+
+
+    function backgroundClose(event) {
+
+      if (event.target ===
+          document.getElementById("paymentModal")) {
+
+        closePayment();
+      }
+    }
+
+
+    /* -----------------------------------------------
+       ESCAPE KEY
+    ------------------------------------------------ */
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+        closePayment();
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
