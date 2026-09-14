@@ -1,0 +1,1412 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edoardo & Gaia | Our Wedding</title>
+
+    <meta
+        name="description"
+        content="A little page for Edoardo & Gaia's wedding gifts."
+    >
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #f8f5ef;
+            color: #253229;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button,
+        a {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --cream: #f8f5ef;
+            --cream-dark: #eee9df;
+
+            --green: #30483a;
+            --green-light: #607466;
+
+            --gold: #b59a69;
+
+            --text: #253229;
+            --muted: #737b73;
+
+            --white: #ffffff;
+
+            --border: rgba(48, 72, 58, 0.14);
+        }
+
+
+        /* =========================================================
+           PAGE
+        ========================================================= */
+
+        .page {
+            width: 100%;
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 92vh;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 24px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(181, 154, 105, 0.10),
+                    transparent 35%
+                ),
+                var(--cream);
+        }
+
+
+        /* subtle decorative circles */
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            border: 1px solid rgba(181, 154, 105, 0.18);
+            border-radius: 50%;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+
+            width: 620px;
+            height: 620px;
+
+            border: 1px solid rgba(48, 72, 58, 0.07);
+            border-radius: 50%;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            pointer-events: none;
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 720px;
+        }
+
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 13px;
+
+            color: var(--green-light);
+
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+
+            margin-bottom: 28px;
+        }
+
+        .eyebrow-line {
+            width: 32px;
+            height: 1px;
+
+            background: var(--gold);
+        }
+
+
+        .names {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(72px, 13vw, 128px);
+
+            line-height: 0.82;
+
+            font-weight: 500;
+
+            letter-spacing: -0.055em;
+
+            color: var(--green);
+        }
+
+
+        .ampersand {
+            display: block;
+
+            font-size: 0.42em;
+
+            line-height: 1;
+
+            color: var(--gold);
+
+            font-weight: 400;
+
+            margin: 13px 0;
+        }
+
+
+        .hero-date {
+            margin-top: 40px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            letter-spacing: 0.04em;
+
+            color: var(--green);
+        }
+
+
+        .hero-location {
+            margin-top: 7px;
+
+            font-size: 11px;
+
+            letter-spacing: 0.19em;
+
+            text-transform: uppercase;
+
+            color: var(--muted);
+        }
+
+
+        .scroll-indicator {
+            position: absolute;
+
+            bottom: 28px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 35px;
+
+            background: var(--gold);
+
+            opacity: 0.7;
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .intro {
+            padding: 110px 24px 100px;
+
+            text-align: center;
+
+            background: var(--white);
+        }
+
+        .section-inner {
+            width: 100%;
+            max-width: 760px;
+
+            margin: 0 auto;
+        }
+
+
+        .small-label {
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.2em;
+
+            text-transform: uppercase;
+
+            color: var(--gold);
+
+            margin-bottom: 20px;
+        }
+
+
+        .intro h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(40px, 7vw, 60px);
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            letter-spacing: -0.035em;
+
+            color: var(--green);
+
+            margin-bottom: 25px;
+        }
+
+
+        .intro p {
+            max-width: 570px;
+
+            margin: 0 auto;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================================
+           GIFTS SECTION
+        ========================================================= */
+
+        .gifts {
+            padding: 100px 22px 120px;
+
+            background: var(--cream);
+        }
+
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-heading h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(42px, 7vw, 58px);
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            letter-spacing: -0.035em;
+
+            color: var(--green);
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-heading p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            max-width: 480px;
+
+            margin: 0 auto;
+        }
+
+
+        .gift-grid {
+            max-width: 1040px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .gift-card {
+            background: var(--white);
+
+            border: 1px solid var(--border);
+
+            padding: 38px 30px 34px;
+
+            text-align: center;
+
+            position: relative;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .gift-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 18px 45px rgba(48, 72, 58, 0.08);
+        }
+
+
+        .gift-number {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 16px;
+
+            color: var(--gold);
+
+            margin-bottom: 25px;
+        }
+
+
+        .gift-icon {
+            width: 62px;
+            height: 62px;
+
+            margin: 0 auto 25px;
+
+            border-radius: 50%;
+
+            background: #f3f0e9;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--green);
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 27px;
+        }
+
+
+        .gift-card h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 31px;
+
+            font-weight: 600;
+
+            color: var(--green);
+
+            margin-bottom: 13px;
+        }
+
+
+        .gift-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.75;
+
+            margin-bottom: 27px;
+        }
+
+
+        .gift-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 44px;
+
+            padding: 0 22px;
+
+            border: 1px solid rgba(48, 72, 58, 0.25);
+
+            color: var(--green);
+
+            background: transparent;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .gift-button:hover {
+            background: var(--green);
+
+            color: white;
+        }
+
+
+        /* =========================================================
+           PAYMENT SECTION
+        ========================================================= */
+
+        .payment {
+            display: none;
+
+            padding: 0 22px 110px;
+
+            background: var(--cream);
+        }
+
+
+        .payment-inner {
+            max-width: 620px;
+
+            margin: 0 auto;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+
+            padding: 42px 38px;
+
+            text-align: center;
+        }
+
+
+        .payment h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 35px;
+
+            font-weight: 600;
+
+            color: var(--green);
+
+            margin-bottom: 12px;
+        }
+
+
+        .payment-description {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 28px;
+        }
+
+
+        .bank-details {
+            background: #f7f4ed;
+
+            padding: 25px;
+
+            text-align: left;
+
+            margin-bottom: 20px;
+        }
+
+
+        .detail-row {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid rgba(48, 72, 58, 0.09);
+        }
+
+
+        .detail-row:last-child {
+            border-bottom: 0;
+        }
+
+
+        .detail-label {
+            font-size: 10px;
+
+            color: var(--muted);
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .detail-value {
+            font-size: 13px;
+
+            color: var(--green);
+
+            font-weight: 500;
+
+            text-align: right;
+
+            word-break: break-all;
+        }
+
+
+        .copy-button {
+            width: 100%;
+
+            height: 46px;
+
+            border: 0;
+
+            background: var(--green);
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+            transition: opacity 0.2s ease;
+        }
+
+
+        .copy-button:hover {
+            opacity: 0.9;
+        }
+
+
+        .close-payment {
+            margin-top: 18px;
+
+            border: 0;
+
+            background: none;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            text-decoration: underline;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           CLOSING MESSAGE
+        ========================================================= */
+
+        .closing {
+            padding: 115px 24px 120px;
+
+            background: var(--green);
+
+            color: white;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+
+        .closing::before {
+            content: "♡";
+
+            position: absolute;
+
+            top: 40px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: rgba(255,255,255,0.22);
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 26px;
+        }
+
+
+        .closing h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(44px, 8vw, 64px);
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            margin-bottom: 25px;
+        }
+
+
+        .closing p {
+            max-width: 520px;
+
+            margin: 0 auto;
+
+            color: rgba(255,255,255,0.72);
+
+            font-size: 14px;
+
+            line-height: 1.85;
+        }
+
+
+        .closing-names {
+            margin-top: 38px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            color: white;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 25px 20px;
+
+            text-align: center;
+
+            background: #263a2f;
+
+            color: rgba(255,255,255,0.4);
+
+            font-size: 9px;
+
+            letter-spacing: 0.15em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           ANIMATION
+        ========================================================= */
+
+        .fade-in {
+            animation: fadeIn 1s ease both;
+        }
+
+        .fade-delay-1 {
+            animation-delay: 0.15s;
+        }
+
+        .fade-delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .fade-delay-3 {
+            animation-delay: 0.45s;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 760px) {
+
+            .hero {
+                min-height: 88vh;
+
+                padding-top: 60px;
+                padding-bottom: 80px;
+            }
+
+
+            .hero::before {
+                width: 390px;
+                height: 390px;
+            }
+
+            .hero::after {
+                width: 460px;
+                height: 460px;
+            }
+
+
+            .names {
+                font-size: clamp(67px, 20vw, 100px);
+            }
+
+
+            .hero-date {
+                margin-top: 32px;
+
+                font-size: 23px;
+            }
+
+
+            .intro {
+                padding: 85px 24px;
+            }
+
+
+            .gifts {
+                padding-top: 80px;
+                padding-bottom: 85px;
+            }
+
+
+            .gift-grid {
+                grid-template-columns: 1fr;
+
+                max-width: 430px;
+            }
+
+
+            .gift-card {
+                padding: 35px 28px;
+            }
+
+
+            .payment {
+                padding-bottom: 85px;
+            }
+
+
+            .payment-inner {
+                padding: 35px 22px;
+            }
+
+
+            .detail-row {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 5px;
+            }
+
+
+            .detail-value {
+                text-align: left;
+            }
+
+
+            .closing {
+                padding: 95px 24px;
+            }
+
+        }
+
+
+        @media (max-width: 380px) {
+
+            .names {
+                font-size: 64px;
+            }
+
+            .hero::before {
+                width: 320px;
+                height: 320px;
+            }
+
+            .hero::after {
+                width: 380px;
+                height: 380px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow fade-in">
+                <span class="eyebrow-line"></span>
+                Our wedding
+                <span class="eyebrow-line"></span>
+            </div>
+
+
+            <div class="names fade-in fade-delay-1">
+
+                Edoardo
+
+                <span class="ampersand">&amp;</span>
+
+                Gaia
+
+            </div>
+
+
+            <div class="hero-date fade-in fade-delay-2">
+                September 2027
+            </div>
+
+            <div class="hero-location fade-in fade-delay-3">
+                Roma · Italia
+            </div>
+
+        </div>
+
+
+        <div class="scroll-indicator">
+            <span>Discover</span>
+            <span class="scroll-line"></span>
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         INTRO
+    ========================================================== -->
+
+    <section class="intro">
+
+        <div class="section-inner">
+
+            <div class="small-label">
+                A little note
+            </div>
+
+
+            <h2>
+                Having you with us<br>
+                is already a gift.
+            </h2>
+
+
+            <p>
+                We can't wait to celebrate this special day surrounded by
+                the people we love. Your presence, your smiles and the
+                memories we'll make together mean more to us than anything
+                else.
+                <br><br>
+                If you would nevertheless like to give us something,
+                we've put together a few ideas below for the next chapter
+                of our life together.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         GIFTS
+    ========================================================== -->
+
+    <section class="gifts" id="gifts">
+
+        <div class="section-heading">
+
+            <div class="small-label">
+                If you wish
+            </div>
+
+            <h2>
+                A gift for our future
+            </h2>
+
+            <p>
+                There is no obligation at all. But if you'd like to
+                contribute, these are the things we'd love to put towards
+                our life together.
+            </p>
+
+        </div>
+
+
+
+        <div class="gift-grid">
+
+
+            <!-- GIFT 1 -->
+
+            <article class="gift-card">
+
+                <div class="gift-number">
+                    I
+                </div>
+
+                <div class="gift-icon">
+                    ✈
+                </div>
+
+                <h3>
+                    Our honeymoon
+                </h3>
+
+                <p>
+                    Help us turn our honeymoon into an unforgettable
+                    adventure, with a few more places to discover,
+                    dinners to remember and stories to bring home.
+                </p>
+
+                <button
+                    class="gift-button"
+                    onclick="showPayment('honeymoon')"
+                >
+                    Contribute
+                </button>
+
+            </article>
+
+
+
+            <!-- GIFT 2 -->
+
+            <article class="gift-card">
+
+                <div class="gift-number">
+                    II
+                </div>
+
+                <div class="gift-icon">
+                    ⌂
+                </div>
+
+                <h3>
+                    Our home
+                </h3>
+
+                <p>
+                    For the little things that will make our home ours:
+                    something beautiful for the table, something for the
+                    kitchen, or simply something we'll enjoy together
+                    every day.
+                </p>
+
+                <button
+                    class="gift-button"
+                    onclick="showPayment('home')"
+                >
+                    Contribute
+                </button>
+
+            </article>
+
+
+
+            <!-- GIFT 3 -->
+
+            <article class="gift-card">
+
+                <div class="gift-number">
+                    III
+                </div>
+
+                <div class="gift-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    Our future
+                </h3>
+
+                <p>
+                    Or simply help us put something aside for the many
+                    adventures, trips and little dreams still waiting
+                    for us.
+                </p>
+
+                <button
+                    class="gift-button"
+                    onclick="showPayment('future')"
+                >
+                    Contribute
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PAYMENT
+    ========================================================== -->
+
+    <section class="payment" id="payment">
+
+        <div class="payment-inner">
+
+            <div class="small-label">
+                Thank you
+            </div>
+
+
+            <h3 id="payment-title">
+                A little something for our honeymoon
+            </h3>
+
+
+            <p class="payment-description">
+                If you'd like to contribute, you can use the details
+                below. Thank you so much for being part of this chapter
+                of our lives.
+            </p>
+
+
+            <div class="bank-details">
+
+                <div class="detail-row">
+
+                    <span class="detail-label">
+                        Account holder
+                    </span>
+
+                    <span
+                        class="detail-value"
+                        id="account-holder"
+                    >
+                        EDOARDO LAUDANI
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span class="detail-label">
+                        IBAN
+                    </span>
+
+                    <span
+                        class="detail-value"
+                        id="iban"
+                    >
+                        XX00 0000 0000 0000 0000 0000
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span class="detail-label">
+                        BIC / SWIFT
+                    </span>
+
+                    <span
+                        class="detail-value"
+                        id="bic"
+                    >
+                        XXXXXXXX
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="copy-button"
+                onclick="copyIBAN()"
+            >
+                Copy IBAN
+            </button>
+
+
+            <button
+                class="close-payment"
+                onclick="hidePayment()"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CLOSING
+    ========================================================== -->
+
+    <section class="closing">
+
+        <h2>
+            We can't wait<br>
+            to celebrate with you.
+        </h2>
+
+
+        <p>
+            Whatever you choose to do, thank you for being part of our
+            story. We are looking forward to sharing this day, and all
+            the moments around it, with you.
+        </p>
+
+
+        <div class="closing-names">
+            Edoardo &amp; Gaia
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+        Edoardo &amp; Gaia · September 2027 · Roma
+    </footer>
+
+
+</div>
+
+
+
+<script>
+
+    /* =========================================================
+       PAYMENT DETAILS
+    ========================================================== */
+
+    /*
+       Change these values to your real bank details.
+    */
+
+    const paymentDetails = {
+
+        holder: "EDOARDO LAUDANI",
+
+        iban: "XX00 0000 0000 0000 0000 0000",
+
+        bic: "XXXXXXXX"
+
+    };
+
+
+    /* =========================================================
+       SHOW PAYMENT
+    ========================================================== */
+
+    function showPayment(type) {
+
+        const payment = document.getElementById("payment");
+
+        const title = document.getElementById("payment-title");
+
+        const titles = {
+
+            honeymoon:
+                "A little something for our honeymoon",
+
+            home:
+                "A little something for our home",
+
+            future:
+                "A little something for our future"
+
+        };
+
+
+        title.textContent = titles[type];
+
+        payment.style.display = "block";
+
+
+        /*
+           Give the browser a moment to render the section
+           before scrolling to it.
+        */
+
+        setTimeout(() => {
+
+            payment.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 50);
+
+    }
+
+
+
+    /* =========================================================
+       HIDE PAYMENT
+    ========================================================== */
+
+    function hidePayment() {
+
+        const payment = document.getElementById("payment");
+
+        payment.style.display = "none";
+
+    }
+
+
+
+    /* =========================================================
+       COPY IBAN
+    ========================================================== */
+
+    async function copyIBAN() {
+
+        const button = document.querySelector(".copy-button");
+
+        const iban = paymentDetails.iban.replace(/\s/g, "");
+
+        try {
+
+            await navigator.clipboard.writeText(iban);
+
+            button.textContent = "IBAN copied ✓";
+
+            setTimeout(() => {
+
+                button.textContent = "Copy IBAN";
+
+            }, 2200);
+
+        } catch (error) {
+
+            alert(
+                "Please copy the IBAN manually: " + iban
+            );
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+       INSERT PAYMENT DETAILS
+    ========================================================== */
+
+    document.getElementById("account-holder").textContent =
+        paymentDetails.holder;
+
+    document.getElementById("iban").textContent =
+        paymentDetails.iban;
+
+    document.getElementById("bic").textContent =
+        paymentDetails.bic;
+
+
+</script>
+
+
+</body>
+</html>
+```
