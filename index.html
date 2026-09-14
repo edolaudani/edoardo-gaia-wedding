@@ -4,34 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Edoardo & Gaia | Our Honeymoon</title>
-
-  <meta
-    name="description"
-    content="Our honeymoon in Rwanda. A collection of experiences we hope to share through your wedding gifts."
-  >
+  <title>Edoardo & Gaia · 4 September 2027</title>
+  <meta name="description" content="Edoardo & Gaia are getting married in Rome on 4 September 2027.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-
     :root {
       --ivory: #f7f4ed;
-      --paper: #fbfaf6;
+      --ivory-light: #fbfaf6;
       --forest: #30483a;
       --forest-dark: #23372d;
       --sage: #69776b;
       --sand: #c0a77a;
-      --text: #30332f;
-      --muted: #72766f;
-      --line: rgba(48, 72, 58, 0.13);
+      --sand-light: #d8c7a6;
       --white: #ffffff;
+      --text: #304036;
+      --muted: #6f776f;
+      --border: rgba(48, 72, 58, 0.14);
     }
 
     * {
@@ -48,1800 +41,906 @@
       background: var(--ivory);
       color: var(--text);
       font-family: "DM Sans", sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      font-weight: 300;
+      line-height: 1.7;
     }
 
-    button {
-      font-family: inherit;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
+    /* NAVIGATION */
 
-    .nav {
+    nav {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
+      width: 100%;
       z-index: 20;
-
+      padding: 28px 5vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      padding: 28px 38px;
-
       color: white;
     }
 
-    .nav-monogram {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
-      letter-spacing: 0.03em;
-    }
-
-    .nav-link {
-      color: rgba(255,255,255,0.88);
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border-bottom: 1px solid rgba(255,255,255,0.55);
-      padding-bottom: 3px;
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-      min-height: 94vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          rgba(28, 49, 38, 0.38),
-          rgba(28, 49, 38, 0.53)
-        ),
-        url("assets/rwanda/hero.jpg")
-        center center / cover no-repeat;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(0,0,0,0.02) 45%,
-          rgba(0,0,0,0.28) 100%
-        );
-
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-
-      width: 100%;
-      max-width: 900px;
-
-      padding: 100px 24px 70px;
-
-      text-align: center;
-      color: white;
-
-      animation: fadeUp 1s ease both;
-    }
-
-    .hero-eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      opacity: 0.88;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 400;
-
-      font-size: clamp(82px, 14vw, 155px);
-      line-height: 0.78;
-      letter-spacing: -0.045em;
-    }
-
-    .hero-subtitle {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(26px, 4vw, 40px);
-
-      margin-top: 38px;
-    }
-
-    .hero-meta {
-      margin-top: 15px;
-
-      font-size: 10px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-
-      opacity: 0.82;
-    }
-
-    .hero-divider {
-      width: 48px;
-      height: 1px;
-
-      background: rgba(255,255,255,0.75);
-
-      margin: 32px auto 0;
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      z-index: 3;
-
-      color: rgba(255,255,255,0.7);
-
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       INTRODUCTION
-    ========================================================= */
-
-    .intro {
-      max-width: 780px;
-      margin: auto;
-
-      padding: 105px 25px 85px;
-
-      text-align: center;
-    }
-
-    .section-label {
-      color: var(--sage);
-
-      font-size: 10px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-
-      margin-bottom: 20px;
-    }
-
-    .intro h2 {
-      color: var(--forest);
-
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 500;
-
-      font-size: clamp(42px, 6vw, 62px);
-      line-height: 0.98;
-
-      margin-bottom: 28px;
-    }
-
-    .intro p {
-      max-width: 630px;
-      margin: auto;
-
-      color: var(--muted);
-
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .intro-signature {
-      margin-top: 30px;
-
-      color: var(--sand);
-
+    .monogram {
       font-family: "Cormorant Garamond", serif;
       font-size: 25px;
-      font-style: italic;
+      letter-spacing: 0.08em;
     }
 
-
-    /* =========================================================
-       JOURNEY INTRO
-    ========================================================= */
-
-    .journey-intro {
-      max-width: 1120px;
-      margin: auto;
-
-      padding: 0 25px 45px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-
-      gap: 40px;
-    }
-
-    .journey-intro h2 {
-      color: var(--forest);
-
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(38px, 5vw, 52px);
-      font-weight: 500;
-
-      line-height: 1;
-    }
-
-    .journey-intro p {
-      max-width: 390px;
-
-      color: var(--muted);
-
-      font-size: 12px;
-      line-height: 1.75;
-    }
-
-
-    /* =========================================================
-       EXPERIENCE GRID
-    ========================================================= */
-
-    .experiences {
-      max-width: 1120px;
-      margin: auto;
-
-      padding: 0 25px 115px;
-    }
-
-    .experience-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 25px;
-    }
-
-    .experience-card {
-      background: var(--paper);
-
-      border: 1px solid var(--line);
-
-      overflow: hidden;
-
-      transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease;
-    }
-
-    .experience-card:hover {
-      transform: translateY(-5px);
-
-      box-shadow:
-        0 20px 45px rgba(38,58,47,0.09);
-    }
-
-    .experience-image {
-      height: 285px;
-
-      background-position: center;
-      background-size: cover;
-
-      position: relative;
-    }
-
-    .experience-number {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-
-      width: 36px;
-      height: 36px;
-
+    .nav-links {
       display: flex;
       align-items: center;
-      justify-content: center;
-
-      background: rgba(255,255,255,0.92);
-
-      color: var(--forest);
-
-      font-family: "Cormorant Garamond", serif;
-      font-size: 17px;
-    }
-
-    .experience-body {
-      padding: 31px 31px 29px;
-    }
-
-    .experience-type {
-      color: var(--sage);
-
-      font-size: 9px;
-      letter-spacing: 0.19em;
-      text-transform: uppercase;
-
-      margin-bottom: 9px;
-    }
-
-    .experience-card h3 {
-      color: var(--forest);
-
-      font-family: "Cormorant Garamond", serif;
-      font-size: 34px;
-      font-weight: 500;
-
-      line-height: 0.98;
-
-      margin-bottom: 14px;
-    }
-
-    .experience-card p {
-      color: var(--muted);
-
-      font-size: 13px;
-      line-height: 1.75;
-
-      margin-bottom: 26px;
-    }
-
-    .experience-bottom {
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 15px;
-    }
-
-    .suggested {
-      color: #898d86;
-
-      font-size: 10px;
-      letter-spacing: 0.02em;
-    }
-
-    .contribute {
-      border: 1px solid var(--forest);
-
-      background: transparent;
-
-      color: var(--forest);
-
-      padding: 11px 18px;
-
-      font-size: 11px;
-
-      cursor: pointer;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .contribute:hover {
-      background: var(--forest);
-      color: white;
-    }
-
-
-    /* =========================================================
-       SPECIAL LARGE CARD
-    ========================================================= */
-
-    .experience-card.featured {
-      grid-column: span 2;
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .experience-card.featured .experience-image {
-      height: 100%;
-      min-height: 360px;
-    }
-
-    .experience-card.featured .experience-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      padding: 50px;
-    }
-
-
-    /* =========================================================
-       PAYMENT MODAL
-    ========================================================= */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-
-      z-index: 100;
-
-      display: none;
-      align-items: center;
-      justify-content: center;
-
-      padding: 25px;
-
-      background: rgba(24,38,30,0.62);
-
-      backdrop-filter: blur(5px);
-    }
-
-    .modal.open {
-      display: flex;
-
-      animation: fadeIn 0.2s ease both;
-    }
-
-    .payment-box {
-      width: 100%;
-      max-width: 520px;
-
-      background: var(--paper);
-
-      padding: 46px 40px 38px;
-
-      text-align: center;
-
-      position: relative;
-
-      animation: fadeUp 0.3s ease both;
-    }
-
-    .close-modal {
-      position: absolute;
-
-      top: 16px;
-      right: 18px;
-
-      border: 0;
-      background: none;
-
-      color: var(--sage);
-
-      font-size: 21px;
-
-      cursor: pointer;
-    }
-
-    .payment-label {
-      color: var(--sage);
-
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-
-      margin-bottom: 11px;
-    }
-
-    .payment-box h2 {
-      color: var(--forest);
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 40px;
-      font-weight: 500;
-
-      line-height: 1;
-
-      margin-bottom: 13px;
-    }
-
-    .payment-box p {
-      color: var(--muted);
-
+      gap: 30px;
       font-size: 12px;
-
-      margin-bottom: 28px;
-    }
-
-    .amount-options {
-      display: flex;
-
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-bottom: 18px;
-    }
-
-    .amount {
-      min-width: 73px;
-
-      padding: 11px 14px;
-
-      border: 1px solid var(--line);
-
-      background: var(--ivory);
-
-      color: var(--forest);
-
-      cursor: pointer;
-
-      font-size: 12px;
-
-      transition: all 0.2s ease;
-    }
-
-    .amount:hover {
-      border-color: var(--forest);
-    }
-
-    .amount.selected {
-      background: var(--forest);
-      border-color: var(--forest);
-
-      color: white;
-    }
-
-    .custom-wrapper {
-      display: none;
-
-      max-width: 280px;
-
-      margin: 7px auto 20px;
-    }
-
-    .custom-wrapper.visible {
-      display: block;
-    }
-
-    .custom-wrapper label {
-      display: block;
-
-      text-align: left;
-
-      color: var(--muted);
-
-      font-size: 10px;
-
-      margin-bottom: 5px;
-    }
-
-    .custom-input {
-      width: 100%;
-
-      padding: 12px;
-
-      border: 1px solid var(--line);
-
-      outline: none;
-
-      background: white;
-
-      font-family: "DM Sans", sans-serif;
-      font-size: 13px;
-    }
-
-    .paypal-button {
-      width: 100%;
-      max-width: 280px;
-
-      padding: 14px 20px;
-
-      border: 0;
-
-      background: #ffc439;
-
-      color: #111;
-
-      cursor: pointer;
-
-      font-size: 12px;
-      font-weight: 500;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .paypal-button:hover {
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    .paypal {
-      font-size: 16px;
-
-      font-style: italic;
-      font-weight: 700;
-
-      margin-right: 7px;
-    }
-
-    .payment-note {
-      margin-top: 14px;
-
-      color: #9a9d97;
-
-      font-size: 9px;
-    }
-
-
-    /* =========================================================
-       CLOSING
-    ========================================================= */
-
-    .closing {
-      background: var(--forest);
-
-      color: white;
-
-      text-align: center;
-
-      padding: 105px 25px;
-    }
-
-    .closing h2 {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(44px, 7vw, 68px);
-
-      font-weight: 400;
-
-      line-height: 0.95;
-
-      margin-bottom: 24px;
-    }
-
-    .closing p {
-      max-width: 510px;
-
-      margin: auto;
-
-      color: rgba(255,255,255,0.69);
-
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    .closing-signature {
-      color: var(--sand);
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 27px;
-
-      margin-top: 32px;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      background: var(--forest);
-
-      color: rgba(255,255,255,0.4);
-
-      text-align: center;
-
-      padding: 0 25px 32px;
-
-      font-size: 9px;
-
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-
-    /* =========================================================
-       ANIMATIONS
-    ========================================================= */
-
-    @keyframes fadeUp {
-
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
+    .nav-links a {
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
     }
 
-    @keyframes fadeIn {
-
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-
+    .nav-links a:hover {
+      opacity: 1;
     }
 
+    .nav-gifts {
+      border: 1px solid rgba(255,255,255,0.55);
+      padding: 9px 16px;
+      border-radius: 30px;
+    }
 
-    /* =========================================================
-       MOBILE
-    ========================================================= */
+    /* HERO */
 
-    @media (max-width: 760px) {
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(25, 38, 30, 0.25),
+          rgba(25, 38, 30, 0.18) 40%,
+          rgba(25, 38, 30, 0.70)
+        ),
+        url("assets/wedding/hero.jpg") center center / cover no-repeat;
+      color: white;
+    }
 
-      .nav {
-        padding: 22px 20px;
+    .hero-content {
+      width: 100%;
+      padding: 0 7vw 9vh;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 11px;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(70px, 12vw, 150px);
+      font-weight: 400;
+      line-height: 0.78;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-date {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+    }
+
+    .hero-date::before {
+      content: "";
+      width: 45px;
+      height: 1px;
+      background: rgba(255,255,255,0.7);
+    }
+
+    .scroll-note {
+      position: absolute;
+      bottom: 30px;
+      right: 5vw;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.7;
+      writing-mode: vertical-rl;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 120px 7vw 130px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 10px;
+      color: var(--sage);
+      margin-bottom: 20px;
+    }
+
+    .intro h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--forest);
+      margin-bottom: 28px;
+    }
+
+    .intro p {
+      max-width: 670px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* DETAILS */
+
+    .details-section {
+      background: var(--forest);
+      color: white;
+      padding: 110px 7vw;
+    }
+
+    .details-header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .details-header .section-label {
+      color: var(--sand-light);
+    }
+
+    .details-header h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 5vw, 62px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .details-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.16);
+    }
+
+    .detail {
+      background: var(--forest);
+      padding: 45px 35px;
+      text-align: center;
+    }
+
+    .detail-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      color: var(--sand-light);
+      margin-bottom: 18px;
+    }
+
+    .detail h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .detail p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* CEREMONY */
+
+    .ceremony {
+      padding: 130px 7vw;
+    }
+
+    .ceremony-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 620px;
+    }
+
+    .ceremony-image {
+      background:
+        linear-gradient(
+          rgba(35, 55, 45, 0.12),
+          rgba(35, 55, 45, 0.12)
+        ),
+        url("assets/wedding/church.jpg") center center / cover no-repeat;
+      min-height: 500px;
+    }
+
+    .ceremony-content {
+      background: var(--ivory-light);
+      padding: 70px 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ceremony-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 5vw, 62px);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--forest);
+      margin-bottom: 28px;
+    }
+
+    .ceremony-content p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .location {
+      margin-top: 15px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .location strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      font-weight: 500;
+      color: var(--forest);
+    }
+
+    .location span {
+      display: block;
+      margin-top: 3px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* RECEPTION */
+
+    .reception {
+      padding: 0 7vw 130px;
+    }
+
+    .reception-card {
+      max-width: 1150px;
+      margin: auto;
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          to top,
+          rgba(25, 38, 30, 0.78),
+          rgba(25, 38, 30, 0.05) 65%
+        ),
+        url("assets/wedding/venue.jpg") center center / cover no-repeat;
+    }
+
+    .reception-content {
+      color: white;
+      padding: 65px;
+      max-width: 650px;
+    }
+
+    .reception-content .section-label {
+      color: var(--sand-light);
+    }
+
+    .reception-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 6vw, 75px);
+      font-weight: 400;
+      line-height: 0.95;
+      margin-bottom: 22px;
+    }
+
+    .reception-content p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .venue-details {
+      display: flex;
+      gap: 35px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .venue-details div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .venue-details strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .venue-details span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+
+    /* GIFTS */
+
+    .gifts {
+      background: #ebe7dc;
+      padding: 110px 7vw;
+      text-align: center;
+    }
+
+    .gifts-inner {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .gifts h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(44px, 5vw, 65px);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--forest);
+      margin-bottom: 22px;
+    }
+
+    .gifts p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: auto;
+      font-size: 15px;
+    }
+
+    .gift-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 27px;
+      background: var(--forest);
+      color: white;
+      font-size: 11px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .gift-button:hover {
+      background: var(--forest-dark);
+      transform: translateY(-2px);
+    }
+
+    /* CLOSING */
+
+    .closing {
+      padding: 130px 7vw;
+      text-align: center;
+    }
+
+    .closing-mark {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--sand);
+      font-size: 35px;
+      margin-bottom: 25px;
+    }
+
+    .closing h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      font-size: clamp(43px, 5vw, 65px);
+      line-height: 1;
+      color: var(--forest);
+      margin-bottom: 25px;
+    }
+
+    .closing p {
+      max-width: 570px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .names {
+      margin-top: 35px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      color: var(--forest);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--forest-dark);
+      color: rgba(255,255,255,0.65);
+      padding: 30px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer .footer-monogram {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      color: white;
+      letter-spacing: 0.08em;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 22px 6vw;
       }
 
-      .nav-link {
-        font-size: 9px;
+      .nav-links {
+        gap: 15px;
       }
 
-      .hero {
-        min-height: 88vh;
+      .nav-links a:not(.nav-gifts) {
+        display: none;
       }
 
       .hero-content {
-        padding-top: 100px;
+        padding: 0 7vw 13vh;
+      }
+
+      .hero h1 {
+        font-size: clamp(65px, 20vw, 105px);
+      }
+
+      .hero-date {
+        font-size: 21px;
+      }
+
+      .scroll-note {
+        display: none;
       }
 
       .intro {
-        padding-top: 80px;
-        padding-bottom: 65px;
+        padding: 90px 7vw;
       }
 
-      .journey-intro {
-        display: block;
-
-        padding-bottom: 32px;
+      .details-section {
+        padding: 85px 7vw;
       }
 
-      .journey-intro p {
-        margin-top: 18px;
-      }
-
-      .experience-grid {
+      .details-grid {
         grid-template-columns: 1fr;
       }
 
-      .experience-card.featured {
-        grid-column: span 1;
-
-        display: block;
+      .detail {
+        padding: 38px 30px;
       }
 
-      .experience-card.featured .experience-image {
-        min-height: 250px;
-        height: 250px;
+      .ceremony {
+        padding: 90px 7vw;
       }
 
-      .experience-card.featured .experience-body {
-        padding: 31px;
+      .ceremony-grid {
+        grid-template-columns: 1fr;
       }
 
-      .experience-image {
-        height: 230px;
+      .ceremony-image {
+        min-height: 420px;
       }
 
-      .experience-bottom {
-        align-items: flex-start;
+      .ceremony-content {
+        padding: 55px 35px;
       }
 
-      .payment-box {
-        padding: 42px 23px 32px;
+      .reception {
+        padding: 0 7vw 90px;
       }
 
-      .payment-box h2 {
-        font-size: 35px;
+      .reception-card {
+        min-height: 600px;
       }
 
+      .reception-content {
+        padding: 40px 30px;
+      }
+
+      .venue-details {
+        gap: 22px;
+      }
+
+      .gifts {
+        padding: 85px 7vw;
+      }
+
+      .closing {
+        padding: 95px 7vw;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
     }
 
+    @media (max-width: 480px) {
+
+      .hero-date {
+        gap: 10px;
+      }
+
+      .hero-date::before {
+        width: 25px;
+      }
+
+      .ceremony-image {
+        min-height: 350px;
+      }
+
+      .reception-card {
+        min-height: 560px;
+      }
+
+      .venue-details {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
   </style>
 </head>
 
-
 <body>
 
+  <!-- NAVIGATION -->
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
+  <nav>
+    <a href="/" class="monogram">E & G</a>
 
-  <nav class="nav">
-
-    <div class="nav-monogram">
-      E & G
+    <div class="nav-links">
+      <a href="#details">The day</a>
+      <a href="#ceremony">Ceremony</a>
+      <a href="#reception">Reception</a>
+      <a href="/gifts/" class="nav-gifts">Honeymoon gifts</a>
     </div>
-
-    <a href="/" class="nav-link">
-      Wedding
-    </a>
-
   </nav>
 
 
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
+  <!-- HERO -->
 
-  <header class="hero">
+  <section class="hero">
 
     <div class="hero-content">
 
-      <div class="hero-eyebrow">
-        Our honeymoon · September 2027
+      <div class="eyebrow">
+        We are getting married
       </div>
 
       <h1>
-        Rwanda
+        Edoardo<br>
+        & Gaia
       </h1>
 
-      <div class="hero-subtitle">
-        An adventure for two
+      <div class="hero-date">
+        4 September 2027 · Rome
       </div>
-
-      <div class="hero-meta">
-        Gorilla trekking · Safari · Mountains · Lake Kivu
-      </div>
-
-      <div class="hero-divider"></div>
 
     </div>
 
-    <div class="hero-scroll">
-      Discover the journey
+    <div class="scroll-note">
+      Scroll to discover
     </div>
 
-  </header>
+  </section>
 
 
-  <!-- =====================================================
-       INTRODUCTION
-  ====================================================== -->
+  <!-- INTRO -->
 
   <section class="intro">
 
     <div class="section-label">
-      A different kind of wedding gift
+      A day to remember
     </div>
 
     <h2>
-      Instead of a present,<br>
-      give us a memory.
+      We cannot wait<br>
+      to celebrate with you.
     </h2>
 
     <p>
-      For our honeymoon, we are dreaming of Rwanda.
-      We want to trek through the forests in search of mountain
-      gorillas, discover the country's wildlife and landscapes,
-      and spend a little time simply enjoying being there together.
+      After years together, countless meals, too many bottles of wine
+      and a life built between places, we are getting married in Rome.
+      We would love to have you there to celebrate this day with us.
     </p>
-
-    <p style="margin-top: 15px;">
-      So we have turned our honeymoon into a collection of
-      experiences. If you would like to give us a gift,
-      you can choose one of the moments below and become
-      a small part of our adventure.
-    </p>
-
-    <div class="intro-signature">
-      Edoardo & Gaia
-    </div>
 
   </section>
 
 
-  <!-- =====================================================
-       EXPERIENCE INTRO
-  ====================================================== -->
+  <!-- THE DAY -->
 
-  <section class="journey-intro">
+  <section class="details-section" id="details">
 
-    <div>
+    <div class="details-header">
+
       <div class="section-label">
-        The journey
+        The day
       </div>
 
       <h2>
-        Ten little pieces<br>
-        of our honeymoon.
+        Saturday · 4 September 2027
       </h2>
-    </div>
-
-    <p>
-      The amounts shown are only suggestions.
-      You are welcome to contribute whatever feels right,
-      towards whichever part of the journey you like.
-    </p>
-
-  </section>
-
-
-  <!-- =====================================================
-       EXPERIENCES
-  ====================================================== -->
-
-  <section class="experiences">
-
-    <div class="experience-grid">
-
-
-      <!-- =================================================
-           01
-      ================================================== -->
-
-      <article class="experience-card featured">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/gorilla.jpg');"
-        >
-
-          <div class="experience-number">
-            01
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The adventure
-          </div>
-
-          <h3>
-            Gorilla Trekking
-          </h3>
-
-          <p>
-            The experience that started it all.
-            A day in the Virunga mountains, walking through
-            the forest in search of one of the mountain gorillas
-            that make Rwanda so extraordinary.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €150
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('Gorilla Trekking')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           02
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/forest.jpg');"
-        >
-
-          <div class="experience-number">
-            02
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The forest
-          </div>
-
-          <h3>
-            A Night in the Forest
-          </h3>
-
-          <p>
-            A night surrounded by the landscapes of the
-            Virunga region, close to the forests where the
-            gorillas live.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €200
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('A Night in the Forest')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           03
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/jeep.jpg');"
-        >
-
-          <div class="experience-number">
-            03
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The road
-          </div>
-
-          <h3>
-            Our Safari Jeep
-          </h3>
-
-          <p>
-            Four wheels, winding roads and a lot of looking
-            out of the window. Our way of discovering Rwanda
-            one landscape at a time.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €100
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('Our Safari Jeep')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           04
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/akagera.jpg');"
-        >
-
-          <div class="experience-number">
-            04
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The wildlife
-          </div>
-
-          <h3>
-            A Day on Safari
-          </h3>
-
-          <p>
-            A day exploring Rwanda's wildlife and hoping to
-            spot elephants, giraffes, lions, hippos and all
-            the unexpected moments that make a safari special.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €150
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('A Day on Safari')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           05
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/lake-kivu.jpg');"
-        >
-
-          <div class="experience-number">
-            05
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The lake
-          </div>
-
-          <h3>
-            Lake Kivu
-          </h3>
-
-          <p>
-            A change of pace after the adventure.
-            Time by the lake, beautiful views and a few days
-            where the only plan is to enjoy being there.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €150
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('Lake Kivu')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           06
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/sunrise.jpg');"
-        >
-
-          <div class="experience-number">
-            06
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The mornings
-          </div>
-
-          <h3>
-            Sunrise in Rwanda
-          </h3>
-
-          <p>
-            One of those mornings worth waking up early for.
-            Mountains, mist and the first light over the
-            Rwandan countryside.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €75
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('Sunrise in Rwanda')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           07
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/dinner.jpg');"
-        >
-
-          <div class="experience-number">
-            07
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The evenings
-          </div>
-
-          <h3>
-            Dinner for Two
-          </h3>
-
-          <p>
-            A beautiful table after a day of adventures.
-            Good food, something nice to drink and nowhere
-            else we need to be.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €100
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('Dinner for Two')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           08
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/lodge.jpg');"
-        >
-
-          <div class="experience-number">
-            08
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The stay
-          </div>
-
-          <h3>
-            A Night to Remember
-          </h3>
-
-          <p>
-            One particularly special night somewhere beautiful.
-            Because a honeymoon should have at least one room
-            we never want to leave.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €250
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('A Night to Remember')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           09
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/coffee.jpg');"
-        >
-
-          <div class="experience-number">
-            09
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            The flavours
-          </div>
-
-          <h3>
-            Coffee & Tea Country
-          </h3>
-
-          <p>
-            Exploring Rwanda's green hills, discovering its
-            coffee and tea culture and seeing another side of
-            the country beyond the safari.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €100
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('Coffee & Tea Country')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           10
-      ================================================== -->
-
-      <article class="experience-card">
-
-        <div
-          class="experience-image"
-          style="background-image: url('assets/rwanda/journey.jpg');"
-        >
-
-          <div class="experience-number">
-            10
-          </div>
-
-        </div>
-
-        <div class="experience-body">
-
-          <div class="experience-type">
-            Getting there
-          </div>
-
-          <h3>
-            The Journey There
-          </h3>
-
-          <p>
-            From Europe to Rwanda and back again.
-            A contribution towards the long journey that will
-            take us to this extraordinary part of the world.
-          </p>
-
-          <div class="experience-bottom">
-
-            <div class="suggested">
-              Suggested contribution · €200
-            </div>
-
-            <button
-              class="contribute"
-              onclick="openPayment('The Journey There')"
-            >
-              Contribute
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
 
     </div>
 
-  </section>
+    <div class="details-grid">
 
+      <div class="detail">
 
-  <!-- =====================================================
-       PAYMENT MODAL
-  ====================================================== -->
+        <div class="detail-number">
+          I
+        </div>
 
-  <div
-    class="modal"
-    id="paymentModal"
-    onclick="backgroundClose(event)"
-  >
+        <h3>
+          Ceremony
+        </h3>
 
-    <div class="payment-box">
+        <p>
+          Our religious ceremony will take place in the heart of Rome,
+          surrounded by the people who mean the most to us.
+        </p>
 
-      <button
-        class="close-modal"
-        onclick="closePayment()"
-        aria-label="Close"
-      >
-        ×
-      </button>
-
-      <div class="payment-label">
-        Your contribution
       </div>
 
-      <h2 id="paymentTitle">
-        Gorilla Trekking
+      <div class="detail">
+
+        <div class="detail-number">
+          II
+        </div>
+
+        <h3>
+          Celebration
+        </h3>
+
+        <p>
+          After the ceremony, we will continue the evening with dinner,
+          drinks, music and plenty of time together.
+        </p>
+
+      </div>
+
+      <div class="detail">
+
+        <div class="detail-number">
+          III
+        </div>
+
+        <h3>
+          Rome
+        </h3>
+
+        <p>
+          One of our favourite cities, and the place where we want
+          to celebrate the beginning of this next chapter.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CEREMONY -->
+
+  <section class="ceremony" id="ceremony">
+
+    <div class="ceremony-grid">
+
+      <div class="ceremony-image"></div>
+
+      <div class="ceremony-content">
+
+        <div class="section-label">
+          The ceremony
+        </div>
+
+        <h2>
+          San Pietro<br>
+          in Montorio
+        </h2>
+
+        <p>
+          We will exchange our vows at the beautiful church of
+          San Pietro in Montorio, overlooking Rome from the
+          slopes of the Gianicolo.
+        </p>
+
+        <p>
+          We will share more details about the ceremony,
+          timing and practical information closer to the date.
+        </p>
+
+        <div class="location">
+
+          <strong>
+            San Pietro in Montorio
+          </strong>
+
+          <span>
+            Piazza di San Pietro in Montorio · Rome
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RECEPTION -->
+
+  <section class="reception" id="reception">
+
+    <div class="reception-card">
+
+      <div class="reception-content">
+
+        <div class="section-label">
+          The reception
+        </div>
+
+        <h2>
+          Villa Giovanelli<br>
+          Fogaccia
+        </h2>
+
+        <p>
+          After the ceremony, we will head to Villa Giovanelli Fogaccia
+          for dinner and an evening of celebration together.
+        </p>
+
+        <div class="venue-details">
+
+          <div>
+            <strong>
+              4 September
+            </strong>
+
+            <span>
+              Saturday evening
+            </span>
+          </div>
+
+          <div>
+            <strong>
+              Rome
+            </strong>
+
+            <span>
+              Villa Giovanelli Fogaccia
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HONEYMOON GIFTS -->
+
+  <section class="gifts">
+
+    <div class="gifts-inner">
+
+      <div class="section-label">
+        If you would like to give us something
+      </div>
+
+      <h2>
+        Come with us to Rwanda.
       </h2>
 
       <p>
-        Choose an amount and continue securely with PayPal.
-        The amount will be sent directly to us.
+        We are planning a honeymoon filled with mountains, wildlife,
+        safari and, hopefully, gorillas. Instead of traditional gifts,
+        we have put together a few pieces of the trip that you can
+        help us experience.
       </p>
 
-
-      <div class="amount-options">
-
-        <button
-          class="amount"
-          onclick="selectAmount(50, this)"
-        >
-          €50
-        </button>
-
-        <button
-          class="amount"
-          onclick="selectAmount(100, this)"
-        >
-          €100
-        </button>
-
-        <button
-          class="amount"
-          onclick="selectAmount(150, this)"
-        >
-          €150
-        </button>
-
-        <button
-          class="amount"
-          onclick="selectAmount(250, this)"
-        >
-          €250
-        </button>
-
-        <button
-          class="amount"
-          onclick="showCustom(this)"
-        >
-          Other
-        </button>
-
-      </div>
-
-
-      <div
-        class="custom-wrapper"
-        id="customWrapper"
-      >
-
-        <label for="customAmount">
-          Your amount
-        </label>
-
-        <input
-          id="customAmount"
-          class="custom-input"
-          type="number"
-          min="1"
-          step="1"
-          placeholder="Enter amount in €"
-          oninput="customChanged()"
-        >
-
-      </div>
-
-
-      <button
-        class="paypal-button"
-        onclick="goToPayPal()"
-      >
-
-        <span class="paypal">
-          PayPal
-        </span>
-
-        Give with PayPal
-
-      </button>
-
-      <div class="payment-note">
-        You will be redirected to PayPal to complete your gift.
-      </div>
+      <a href="/gifts/" class="gift-button">
+        Explore our honeymoon
+      </a>
 
     </div>
 
-  </div>
+  </section>
 
 
-  <!-- =====================================================
-       CLOSING
-  ====================================================== -->
+  <!-- CLOSING -->
 
   <section class="closing">
 
+    <div class="closing-mark">
+      E & G
+    </div>
+
     <h2>
-      Thank you for being<br>
-      part of our adventure.
+      See you in Rome.
     </h2>
 
     <p>
-      We cannot wait to come home with stories,
-      photographs and probably far too many pictures of gorillas.
+      We are very lucky to be able to share this day with the people
+      we love. We cannot wait to celebrate, eat, drink, dance and
+      make some very good memories together.
     </p>
 
-    <div class="closing-signature">
+    <div class="names">
       Edoardo & Gaia
     </div>
 
   </section>
 
 
+  <!-- FOOTER -->
+
   <footer>
-    Edoardo & Gaia · Rwanda · 2027
+
+    <div class="footer-monogram">
+      E & G
+    </div>
+
+    <div>
+      4 September 2027 · Rome
+    </div>
+
+    <div>
+      <a href="/gifts/">Honeymoon gifts</a>
+    </div>
+
   </footer>
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
-  <script>
-
-    const PAYPAL_USERNAME = "edoardogaia";
-
-    let selectedAmount = null;
-    let selectedGift = "";
-
-
-    /* -----------------------------------------------
-       OPEN PAYMENT
-    ------------------------------------------------ */
-
-    function openPayment(giftName) {
-
-      selectedGift = giftName;
-
-      document.getElementById("paymentTitle").textContent =
-        giftName;
-
-      selectedAmount = null;
-
-      document
-        .querySelectorAll(".amount")
-        .forEach(button => {
-          button.classList.remove("selected");
-        });
-
-      document
-        .getElementById("customWrapper")
-        .classList.remove("visible");
-
-      document
-        .getElementById("customAmount")
-        .value = "";
-
-      document
-        .getElementById("paymentModal")
-        .classList.add("open");
-
-      document.body.style.overflow = "hidden";
-    }
-
-
-    /* -----------------------------------------------
-       PRESET AMOUNT
-    ------------------------------------------------ */
-
-    function selectAmount(amount, button) {
-
-      selectedAmount = amount;
-
-      document
-        .querySelectorAll(".amount")
-        .forEach(item => {
-          item.classList.remove("selected");
-        });
-
-      button.classList.add("selected");
-
-      document
-        .getElementById("customWrapper")
-        .classList.remove("visible");
-
-      document
-        .getElementById("customAmount")
-        .value = "";
-    }
-
-
-    /* -----------------------------------------------
-       CUSTOM AMOUNT
-    ------------------------------------------------ */
-
-    function showCustom(button) {
-
-      selectedAmount = null;
-
-      document
-        .querySelectorAll(".amount")
-        .forEach(item => {
-          item.classList.remove("selected");
-        });
-
-      button.classList.add("selected");
-
-      document
-        .getElementById("customWrapper")
-        .classList.add("visible");
-
-      document
-        .getElementById("customAmount")
-        .focus();
-    }
-
-
-    function customChanged() {
-
-      const value =
-        parseFloat(
-          document.getElementById("customAmount").value
-        );
-
-      if (!isNaN(value) && value > 0) {
-        selectedAmount = value;
-      } else {
-        selectedAmount = null;
-      }
-    }
-
-
-    /* -----------------------------------------------
-       PAYPAL
-    ------------------------------------------------ */
-
-    function goToPayPal() {
-
-      if (!selectedAmount || selectedAmount <= 0) {
-
-        alert("Please choose or enter an amount first.");
-
-        return;
-      }
-
-      const amount =
-        Number(selectedAmount).toFixed(2);
-
-      const paypalUrl =
-        `https://paypal.me/${PAYPAL_USERNAME}/${amount}`;
-
-      window.location.href = paypalUrl;
-    }
-
-
-    /* -----------------------------------------------
-       CLOSE
-    ------------------------------------------------ */
-
-    function closePayment() {
-
-      document
-        .getElementById("paymentModal")
-        .classList.remove("open");
-
-      document.body.style.overflow = "";
-    }
-
-
-    function backgroundClose(event) {
-
-      if (event.target ===
-          document.getElementById("paymentModal")) {
-
-        closePayment();
-      }
-    }
-
-
-    /* -----------------------------------------------
-       ESCAPE KEY
-    ------------------------------------------------ */
-
-    document.addEventListener("keydown", function(event) {
-
-      if (event.key === "Escape") {
-        closePayment();
-      }
-
-    });
-
-  </script>
 
 </body>
 </html>
-```
